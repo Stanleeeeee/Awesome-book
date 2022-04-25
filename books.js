@@ -10,7 +10,6 @@ let books = [
   { title: "Second Book", author: "Testeroo Testyy" },
 ];
 
-localStorage.setItem("myname", "yousef");
 const renderBooks = () => {
   for (let i = 0; i < books.length; i++) {
     const currentBook = books[i];
@@ -57,8 +56,10 @@ submitButton.addEventListener("click", (e) => {
 
 window.onload = fetchAndRenderBooks();
 
-const removeButton = document.querySelector(".btn");
-removeButton.addEventListener("click", (e) => {
-  const bookTitle = removeButton.classList[1];
-  removeBook(bookTitle);
-});
+const removeButton = document.querySelectorAll(".btn");
+removeButton.forEach((e) =>
+  e.addEventListener("click", () => {
+    const bookTitle = e.classList[1];
+    removeBook(bookTitle);
+  })
+);
