@@ -1,5 +1,6 @@
 const form = document.querySelector("form");
 const booksSections = document.querySelector(".books");
+const submitButton = document.querySelector(".submit-button");
 
 let books = [
   {
@@ -11,15 +12,13 @@ let books = [
 
 localStorage.setItem("myname", "yousef");
 const renderBooks = () => {
-  console.log(booksSections);
-  console.log("Rendering");
   for (let i = 0; i < books.length; i++) {
     const currentBook = books[i];
     const bookTemplate = document.createElement("bookTemp");
     bookTemplate.innerHTML = `<div class="items-container">
       <h2>${currentBook.title}</h2>
       <p>${currentBook.author}</p>
-      <button type="button" class="btn" data="${currentBook.title}">Remove</button>
+      <button type="button" class="btn ${currentBook.title}"}">Remove</button>
       <hr class="line" /> </div>`;
 
     booksSections.appendChild(bookTemplate.firstChild);
@@ -27,13 +26,9 @@ const renderBooks = () => {
 };
 
 const fetchAndRenderBooks = () => {
-  console.log("fetching");
   if (localStorage.getItem("books")) {
-    console.log("books already hre !");
     books = JSON.parse(localStorage.getItem("books"));
-    console.log(books);
   } else {
-    console.log("correct !");
     localStorage.setItem("books", JSON.stringify(books));
   }
   renderBooks();
@@ -41,25 +36,29 @@ const fetchAndRenderBooks = () => {
 const addBook = (title, author) => {
   books.push({ title, author });
   localStorage.setItem("books", JSON.stringify(books));
-  renderBooks();
+  window.location.reload();
 };
 
 const removeBook = (title, author) => {
   books = books.filter((book) => book.title !== title);
   localStorage.setItem("books", JSON.stringify(books));
+  window.location.reload();
 };
 
-form.addEventListener("submit", () => {
-  const title = form.elements.name.title;
-  const author = form.elements.name.author;
-
+submitButton.addEventListener("click", (e) => {
+  const title = form.elements.title.value;
+  const author = form.elements.author.value;
+  if (!title || !author) {
+    return;
+  }
+  e.preventDefault();
   addBook(title, author);
 });
 
-// // const removeButton = document.querySelector(".btn");
-// removeButton.addEventListener("click", (e) => {
-//   removeButton.getAttribute("data");
-//   const bookTitle = removeButton.getAttribute("data");
-//   removeBook(bookTitle);
-// });
 window.onload = fetchAndRenderBooks();
+
+const removeButton = document.querySelector(".btn");
+removeButton.addEventListener("click", (e) => {
+  const bookTitle = removeButton.classList[1];
+  removeBook(bookTitle);
+});
