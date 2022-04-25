@@ -2,7 +2,7 @@
 
 # Project Name
 
-- Awesome Book
+- Awesome Books website
 
 ## Description of the project.
 
