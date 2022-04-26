@@ -13,7 +13,6 @@ header {
   width: 98%;
   margin: 5px auto;
   display: flex;
-
   justify-content: space-between;
   border: 1px solid black;
   align-items: center;
@@ -27,10 +26,12 @@ ul {
   display: flex;
   justify-content: space-evenly;
 }
+
 ul li {
   list-style: none;
   cursor: pointer;
 }
+
 ul li:active {
   color: blue;
 }
@@ -129,13 +130,16 @@ footer p {
   flex-direction: column;
   align-items: center;
 }
+
 .contact-section p {
   align-self: center;
   margin-right: 20%;
 }
+
 .contact-list {
   display: block;
 }
+
 .contact-item {
   list-style: circle;
 }
