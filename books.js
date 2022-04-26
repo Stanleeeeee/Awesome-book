@@ -1,5 +1,4 @@
 import Books from "./js/book_collection.js";
-
 const form = document.querySelector("form");
 const booksSections = document.querySelector(".book-list");
 const submitButton = document.querySelector(".submit-button");
