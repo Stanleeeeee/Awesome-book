@@ -5,7 +5,7 @@ body {
 }
 
 h1 {
-  text-align: center;
+  margin-left: 10px;
   font-size: 2rem;
 }
 
@@ -35,13 +35,20 @@ ul li:active {
   color: blue;
 }
 
-.books {
-  width: 90%;
+.book-list {
+  width: 95%;
   margin: 5px auto;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+}
+
+.books {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
 }
 
 .items-container {
@@ -79,7 +86,7 @@ hr {
   margin: 15px auto;
 }
 
-.contact-section {
+.add-section {
   text-align: center;
   display: none;
   flex-direction: column;
