@@ -9,19 +9,20 @@
   </head>
   <body>
     <header>
-      <h2>Awesome books</h2>
+      <h1>Awesome books</h1>
       <nav class="nav-bar">
         <ul class="nav-list">
-          <li>List</li>
+          <li class="list">List</li>
           <li class="add-new">Add New</li>
-          <li>Contact</li>
+          <li class="contact">Contact</li>
         </ul>
       </nav>
     </header>
-    <h1>Awesome Books</h1>
-
-    <section class="books"></section>
-    <section class="contact-section">
+    <section class="books-wrapper">
+      <h2>All Awesome Books</h2>
+      <article class="books"></article>
+    </section>
+    <section class="add-section">
       <h2 class="add-header">Add a new book</h2>
       <form
         action="https://formspree.io/f/meqnzwlb"
@@ -49,7 +50,10 @@
       </form>
       <div class="submit-button">Add</div>
     </section>
+    <section class="contact-section">contact me</section>
+
     <script type="module" src="books.js"></script>
-    <script type="module" src="book_collection.js"></script>
+    <script type="module" src="js/book_collection.js"></script>
+    <script src="js/navigation.js"></script>
   </body>
 </html>
