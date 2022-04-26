@@ -13,7 +13,6 @@ header {
   width: 98%;
   margin: 5px auto;
   display: flex;
-
   justify-content: space-between;
   border: 1px solid black;
   align-items: center;
@@ -27,10 +26,12 @@ ul {
   display: flex;
   justify-content: space-evenly;
 }
-ul li {
+
+.nav-bar ul li {
   list-style: none;
   cursor: pointer;
 }
+
 ul li:active {
   color: blue;
 }
@@ -109,6 +110,26 @@ form {
   cursor: pointer;
 }
 
+.contact h1 {
+  text-align: center;
+}
+
+footer p {
+  margin-left: 10px;
+}
+
+.contact p {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.list ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.7rem;
+}
+
 footer {
   width: 95%;
   text-align: start;
@@ -120,6 +141,4 @@ footer {
   border: 1px solid black;
 }
 
-footer p {
-  margin-left: 10px;
-}
+
