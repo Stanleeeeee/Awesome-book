@@ -15,7 +15,7 @@ const renderBooks = () => {
       i % 2 == 0 ? "white" : "gray"
     }">
       <h2>${currentBook.title} by <span> ${currentBook.author} </span></h2>
-      <button type="button" class="btn ${currentBook.title}"}">Remove</button>
+      <div type="button" class="btn ${currentBook.title}"}">Remove</div>
        </div>`;
 
     booksSections.appendChild(bookTemplate.firstChild);
