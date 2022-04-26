@@ -108,3 +108,18 @@ form {
   box-shadow: 2px 2px #888;
   cursor: pointer;
 }
+
+footer {
+  width: 95%;
+  text-align: start;
+  display: flex;
+  flex-direction: column-reverse;
+  position: absolute;
+  left: 2.5%;
+  bottom: 5px;
+  border: 1px solid black;
+}
+
+footer p {
+  margin-left: 10px;
+}
