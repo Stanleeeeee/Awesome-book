@@ -10,13 +10,33 @@ header h1 {
 }
 
 .books {
+  width: 90%;
+  margin: 5px auto;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
+  row-gap: 10px;
 }
 
 .items-container {
   display: flex;
   width: 100%;
+
   justify-content: space-between;
+  align-items: center;
+}
+.white {
+  background-color: white !important;
+}
+.gray {
+  background-color: lightgray !important;
+}
+
+.btn {
+  padding: 0 5%;
+  height: 5vh;
+  margin-right: 10px;
+}
+h2 {
+  margin-left: 10px;
 }

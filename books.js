@@ -11,20 +11,19 @@ const renderBooks = () => {
   for (let i = 0; i < books.length; i += 1) {
     const currentBook = books[i];
     const bookTemplate = document.createElement("bookTemp");
-    bookTemplate.innerHTML = `<div class="items-container">
-      <h2>${currentBook.title}</h2>
-      <p>${currentBook.author}</p>
+    bookTemplate.innerHTML = `<div class="items-container ${
+      i % 2 == 0 ? "white" : "gray"
+    }">
+      <h2>${currentBook.title} by <span> ${currentBook.author} </span></h2>
       <button type="button" class="btn ${currentBook.title}"}">Remove</button>
-      <hr class="line" /> </div>`;
+       </div>`;
 
     booksSections.appendChild(bookTemplate.firstChild);
   }
 };
 
 const fetchAndRenderBooks = () => {
-  if (localStorage.getItem("books")) {
-    books = JSON.parse(localStorage.getItem("books"));
-  } else {
+  if (!localStorage.getItem("books")) {
     localStorage.setItem("books", JSON.stringify(books));
   }
   renderBooks();
