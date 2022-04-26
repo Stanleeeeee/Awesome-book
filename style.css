@@ -59,4 +59,8 @@ form {
 
 .submit-button {
   margin: 0 auto;
+  border: 1px solid black;
+  padding: 5px 10px;
+  box-shadow: 2px 2px #888888;
+  cursor: pointer;
 }
