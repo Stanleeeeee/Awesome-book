@@ -19,6 +19,22 @@ header {
   align-items: center;
 }
 
+.nav-bar {
+  width: 20%;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+ul li {
+  list-style: none;
+  cursor: pointer;
+}
+ul li:active {
+  color: blue;
+}
+
 .books {
   width: 90%;
   margin: 5px auto;
@@ -65,7 +81,7 @@ hr {
 
 .contact-section {
   text-align: center;
-  display: flex;
+  display: none;
   flex-direction: column;
   row-gap: 12px;
   padding-bottom: 10%;
