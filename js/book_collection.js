@@ -7,7 +7,7 @@ class Books {
     { title: 'Second Book', author: 'Testeroo Testyy' },
   ];
 
-  static addBook = (title, author) => {
+  static addBook = (title, auth) => {
     this.books.push({ title, author });
     localStorage.setItem('books', JSON.stringify(this.books));
     window.location.reload();
