@@ -5,7 +5,7 @@ body {
 }
 
 h1 {
-  text-align: center;
+  margin-left: 10px;
   font-size: 2rem;
 }
 
@@ -35,13 +35,20 @@ ul li:active {
   color: blue;
 }
 
-.books {
-  width: 90%;
+.book-list {
+  width: 95%;
   margin: 5px auto;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+}
+
+.books {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
 }
 
 .items-container {
@@ -79,7 +86,7 @@ hr {
   margin: 15px auto;
 }
 
-.contact-section {
+.add-section {
   text-align: center;
   display: none;
   flex-direction: column;
@@ -100,4 +107,35 @@ form {
   padding: 5px 10px;
   box-shadow: 2px 2px #888;
   cursor: pointer;
+}
+
+footer {
+  width: 95%;
+  text-align: start;
+  display: flex;
+  flex-direction: column-reverse;
+  position: absolute;
+  left: 2.5%;
+  bottom: 5px;
+  border: 1px solid black;
+}
+
+footer p {
+  margin-left: 10px;
+}
+
+.contact-section {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-section p {
+  align-self: center;
+  margin-right: 20%;
+}
+.contact-list {
+  display: block;
+}
+.contact-item {
+  list-style: circle;
 }
