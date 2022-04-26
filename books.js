@@ -1,18 +1,18 @@
-import Books from "/book_collection.js";
+import Books from './book_collection.js';
 
-const form = document.querySelector("form");
-const booksSections = document.querySelector(".books");
-const submitButton = document.querySelector(".submit-button");
-let books = Books.books;
+const form = document.querySelector('form');
+const booksSections = document.querySelector('.books');
+const submitButton = document.querySelector('.submit-button');
+const { books } = Books;
 const renderBooks = () => {
   if (books.length === 0) {
-    booksSections.innerHTML = "<p>You dont have books yet, add some !</p>";
+    booksSections.innerHTML = '<p>You dont have books yet, add some !</p>';
   }
   for (let i = 0; i < books.length; i += 1) {
     const currentBook = books[i];
-    const bookTemplate = document.createElement("bookTemp");
+    const bookTemplate = document.createElement('bookTemp');
     bookTemplate.innerHTML = `<div class="items-container ${
-      i % 2 == 0 ? "white" : "gray"
+      i % 2 === 0 ? 'white' : 'gray'
     }">
       <h2>${currentBook.title} by <span> ${currentBook.author} </span></h2>
       <div type="button" class="btn ${currentBook.title}"}">Remove</div>
@@ -23,13 +23,13 @@ const renderBooks = () => {
 };
 
 const fetchAndRenderBooks = () => {
-  if (!localStorage.getItem("books")) {
-    localStorage.setItem("books", JSON.stringify(books));
+  if (!localStorage.getItem('books')) {
+    localStorage.setItem('books', JSON.stringify(books));
   }
   renderBooks();
 };
 
-submitButton.addEventListener("click", (e) => {
+submitButton.addEventListener('click', () => {
   const title = form.elements.title.value;
   const author = form.elements.author.value;
   if (!title || !author) {
@@ -40,10 +40,8 @@ submitButton.addEventListener("click", (e) => {
 
 window.onload = fetchAndRenderBooks();
 
-const removeButton = document.querySelectorAll(".btn");
-removeButton.forEach((e) =>
-  e.addEventListener("click", () => {
-    const bookTitle = e.classList[1];
-    Books.removeBook(bookTitle);
-  })
-);
+const removeButton = document.querySelectorAll('.btn');
+removeButton.forEach((e) => e.addEventListener('click', () => {
+  const bookTitle = e.classList[1];
+  Books.removeBook(bookTitle);
+}));
