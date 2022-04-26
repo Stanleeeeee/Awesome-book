@@ -1,15 +1,9 @@
+import Books from './book_collection.js';
+
 const form = document.querySelector('form');
 const booksSections = document.querySelector('.books');
 const submitButton = document.querySelector('.submit-button');
-
-let books = [
-  {
-    title: 'Testeroo Testyy',
-    author: 'Lorem Ipsum',
-  },
-  { title: 'Second Book', author: 'Testeroo Testyy' },
-];
-
+const { books } = Books;
 const renderBooks = () => {
   if (books.length === 0) {
     booksSections.innerHTML = '<p>You dont have books yet, add some !</p>';
@@ -17,44 +11,31 @@ const renderBooks = () => {
   for (let i = 0; i < books.length; i += 1) {
     const currentBook = books[i];
     const bookTemplate = document.createElement('bookTemp');
-    bookTemplate.innerHTML = `<div class="items-container">
-      <h2>${currentBook.title}</h2>
-      <p>${currentBook.author}</p>
-      <button type="button" class="btn ${currentBook.title}"}">Remove</button>
-      <hr class="line" /> </div>`;
+    bookTemplate.innerHTML = `<div class="items-container ${
+      i % 2 === 0 ? 'white' : 'gray'
+    }">
+      <h2>${currentBook.title} by <span> ${currentBook.author} </span></h2>
+      <div type="button" class="btn ${currentBook.title}"}">Remove</div>
+       </div>`;
 
     booksSections.appendChild(bookTemplate.firstChild);
   }
 };
 
 const fetchAndRenderBooks = () => {
-  if (localStorage.getItem('books')) {
-    books = JSON.parse(localStorage.getItem('books'));
-  } else {
+  if (!localStorage.getItem('books')) {
     localStorage.setItem('books', JSON.stringify(books));
   }
   renderBooks();
 };
-const addBook = (title, author) => {
-  books.push({ title, author });
-  localStorage.setItem('books', JSON.stringify(books));
-  window.location.reload();
-};
 
-const removeBook = (title) => {
-  books = books.filter((book) => book.title !== title);
-  localStorage.setItem('books', JSON.stringify(books));
-  window.location.reload();
-};
-
-submitButton.addEventListener('click', (e) => {
+submitButton.addEventListener('click', () => {
   const title = form.elements.title.value;
   const author = form.elements.author.value;
   if (!title || !author) {
     return;
   }
-  e.preventDefault();
-  addBook(title, author);
+  Books.addBook(title, author);
 });
 
 window.onload = fetchAndRenderBooks();
@@ -62,5 +43,5 @@ window.onload = fetchAndRenderBooks();
 const removeButton = document.querySelectorAll('.btn');
 removeButton.forEach((e) => e.addEventListener('click', () => {
   const bookTitle = e.classList[1];
-  removeBook(bookTitle);
+  Books.removeBook(bookTitle);
 }));
