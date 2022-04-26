@@ -21,13 +21,14 @@ header h1 {
 .items-container {
   display: flex;
   width: 100%;
-
   justify-content: space-between;
   align-items: center;
 }
+
 .white {
   background-color: white !important;
 }
+
 .gray {
   background-color: lightgray !important;
 }
@@ -36,20 +37,30 @@ header h1 {
   padding: 0 5%;
   height: 5vh;
   margin-right: 10px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  box-shadow: 2px 2px #888;
+  cursor: pointer;
 }
+
 h2 {
   margin-left: 10px;
 }
+
 hr {
   width: 20%;
   margin: 15px auto;
 }
+
 .contact-section {
   text-align: center;
   display: flex;
   flex-direction: column;
   row-gap: 12px;
+  padding-bottom: 10%;
 }
+
 form {
   text-align: center;
   display: flex;
@@ -61,13 +72,6 @@ form {
   margin: 0 auto;
   border: 1px solid black;
   padding: 5px 10px;
-  box-shadow: 2px 2px #888888;
-  cursor: pointer;
-}
-.btn {
-  border: 1px solid black;
-  display: flex;
-  align-items: center;
-  box-shadow: 2px 2px #888888;
+  box-shadow: 2px 2px #888;
   cursor: pointer;
 }
