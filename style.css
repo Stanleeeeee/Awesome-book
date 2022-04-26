@@ -40,3 +40,23 @@ header h1 {
 h2 {
   margin-left: 10px;
 }
+hr {
+  width: 20%;
+  margin: 15px auto;
+}
+.contact-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.submit-button {
+  margin: 0 auto;
+}
