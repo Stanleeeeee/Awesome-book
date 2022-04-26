@@ -1,22 +1,20 @@
 class Books {
-  static books = JSON.parse(localStorage.getItem('books')) ?? [
+  static books = JSON.parse(localStorage.getItem("books")) ?? [
     {
-      title: 'Testeroo Testyy',
-      author: 'Lorem Ipsum',
+      title: "Testeroo Testyy",
+      author: "Lorem Ipsum",
     },
-    { title: 'Second Book', author: 'Testeroo Testyy' },
+    { title: "Second Book", author: "Testeroo Testyy" },
   ];
 
   static addBook = (title, author) => {
     this.books.push({ title, author });
-    localStorage.setItem('books', JSON.stringify(this.books));
-    window.location.reload();
+    localStorage.setItem("books", JSON.stringify(this.books));
   };
 
   static removeBook = (title) => {
     this.books = this.books.filter((book) => book.title !== title);
-    localStorage.setItem('books', JSON.stringify(this.books));
-    window.location.reload();
+    localStorage.setItem("books", JSON.stringify(this.books));
   };
 }
 
