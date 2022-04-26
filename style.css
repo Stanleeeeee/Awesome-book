@@ -27,7 +27,7 @@ ul {
   justify-content: space-evenly;
 }
 
-.nav-bar ul li {
+ul li {
   list-style: none;
   cursor: pointer;
 }
@@ -141,4 +141,27 @@ footer {
   left: 2.5%;
   bottom: 5px;
   border: 1px solid black;
+}
+
+footer p {
+  margin-left: 10px;
+}
+
+.contact-section {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-section p {
+  align-self: center;
+  margin-right: 20%;
+}
+
+.contact-list {
+  display: block;
+}
+
+.contact-item {
+  list-style: circle;
 }
