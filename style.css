@@ -4,9 +4,19 @@ body {
   box-sizing: border-box;
 }
 
-header h1 {
+h1 {
   text-align: center;
   font-size: 2rem;
+}
+
+header {
+  width: 98%;
+  margin: 5px auto;
+  display: flex;
+
+  justify-content: space-between;
+  border: 1px solid black;
+  align-items: center;
 }
 
 .books {
