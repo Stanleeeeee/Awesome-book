@@ -4,16 +4,15 @@ import emptyList from "./js/custom_event.js";
 const form = document.querySelector("form");
 const booksSections = document.querySelector(".book-list");
 const submitButton = document.querySelector(".submit-button");
-const { books } = Books;
 const renderBooks = () => {
-  if (books.length === 0) {
+  if (Books.books.length === 0) {
     booksSections.innerHTML = "<p>You dont have books yet, add some !</p>";
     return;
   }
   booksSections.innerHTML = ``;
-  console.log(books.length);
-  for (let i = 0; i < books.length; i += 1) {
-    const currentBook = books[i];
+  console.log(Books.books.length);
+  for (let i = 0; i < Books.books.length; i += 1) {
+    const currentBook = Books.books[i];
     const bookTemplate = document.createElement("bookTemp");
     bookTemplate.innerHTML = `<div class="items-container ${
       i % 2 === 0 ? "white" : "gray"
@@ -36,13 +35,11 @@ window.onload = fetchAndRenderBooks();
 
 const setRemoveButtonListnters = () => {
   let removeButton = document.querySelectorAll(".btn");
-  console.log(removeButton);
-
   removeButton.forEach((e) =>
     e.addEventListener("click", (event) => {
       const bookTitle = e.classList[1];
       Books.removeBook(bookTitle, event);
-      if (books.length === 0) {
+      if (Books.books.length === 0) {
         booksSections.dispatchEvent(emptyList);
       }
     })
