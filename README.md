@@ -28,6 +28,12 @@ Below is the summary of this project:
 - Javascript
 - css
 
+### Install
+
+- Clone the repo from [Here](https://github.com/yosefHesham/capstone1)
+- Go to index.html
+- run the file
+
 ## Live Demo (if available)
 
 [Live Demo Link](https://stanleeeeee.github.io/Awesome-book/)

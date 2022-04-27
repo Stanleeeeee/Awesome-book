@@ -1,3 +1,6 @@
+import emptyList from './custom_event.js';
+import booksSections from './booksui.js';
+
 class Books {
   static books = JSON.parse(localStorage.getItem('books')) ?? [
     {
@@ -10,13 +13,16 @@ class Books {
   static addBook = (title, author) => {
     this.books.push({ title, author });
     localStorage.setItem('books', JSON.stringify(this.books));
-    window.location.reload();
   };
 
-  static removeBook = (title) => {
+  static removeBook = (title, e) => {
+    if (this.books.length === 1) {
+      booksSections.dispatchEvent(emptyList);
+    }
     this.books = this.books.filter((book) => book.title !== title);
     localStorage.setItem('books', JSON.stringify(this.books));
-    window.location.reload();
+
+    e.target.parentElement.remove();
   };
 }
 
