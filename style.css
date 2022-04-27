@@ -110,6 +110,28 @@ form {
   cursor: pointer;
 }
 
+.contact h1 {
+  text-align: center;
+}
+
+footer p {
+  margin-left: 10px;
+}
+
+.contact p {
+  text-align: center;
+  line-height: 1.5rem;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.list ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.8rem;
+}
+
 footer {
   width: 95%;
   text-align: start;
@@ -119,10 +141,6 @@ footer {
   left: 2.5%;
   bottom: 5px;
   border: 1px solid black;
-}
-
-footer p {
-  margin-left: 10px;
 }
 
 .contact-section {
