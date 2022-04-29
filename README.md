@@ -1,8 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Project Name
-
-- Awesome Books website
+- #### Awesome Books website
 
 ## Description of the project.
 
@@ -30,7 +29,7 @@ Below is the summary of this project:
 
 ### Install
 
-- Clone the repo from [Here](https://github.com/yosefHesham/capstone1)
+- Clone the repo from [Here](https://github.com/Stanleeeeee/Awesome-book)
 - Go to index.html
 - run the file
 
@@ -41,8 +40,8 @@ Below is the summary of this project:
 ## Authors
 
 👤 **Author1**
-
 - Ezeoke Stanley
+
 - GitHub: [@stanleeeeee](https://github.com/stanleeeeee)
 - Twitter: [@Stanmega89](https://twitter.com/Stanmega89)
 
